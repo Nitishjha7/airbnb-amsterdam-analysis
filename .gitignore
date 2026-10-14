@@ -1,3 +1,6 @@
 .ipynb_checkpoints/
 .DS_Store
 *.csv
+
+# Private notes (not for GitHub)
+MY_NOTES.md

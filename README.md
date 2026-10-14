@@ -10,6 +10,18 @@ Coursework project (Statistical Analysis & Visualisation, Visualization and Stor
 | `airbnb_amsterdam_dashboards.twbx` | Tableau workbook with two interactive dashboards |
 | `dashboard_summary.docx` | Written summary of what each dashboard shows |
 
+## Charts from the notebook
+
+| Price distribution | Listings per room type |
+|---|---|
+| ![price](docs/price-distribution.png) | ![room types](docs/room-types.png) |
+
+| Average rating by year | Correlation of rating sub-scores |
+|---|---|
+| ![rating by year](docs/rating-by-year.png) | ![correlation](docs/ratings-correlation.png) |
+
+![price by neighbourhood](docs/price-by-neighbourhood.png)
+
 ## Notebook: 7 tasks
 
 1. Descriptive statistics: number of listings, average price, average rating
@@ -33,9 +45,17 @@ Some findings noted in the notebook:
 
 ## Running the notebook
 
-The dataset (`airbnblistings.csv`) was supplied by the course and is not included here. Place it next to the notebook, then:
+The dataset (`airbnblistings.csv`, Amsterdam listings from the course) is packaged inside the Tableau workbook, because a `.twbx` is just a zip file. Extract it next to the notebook, then run:
 
 ```bash
+# 1. get the CSV out of the workbook
+python -c "import zipfile; z=zipfile.ZipFile('airbnb_amsterdam_dashboards.twbx'); [open('airbnblistings.csv','wb').write(z.read(n)) for n in z.namelist() if n.endswith('.csv')]"
+
+# 2. install and run
 pip install pandas numpy matplotlib seaborn jupyter
 jupyter notebook airbnb_amsterdam_analysis.ipynb
 ```
+
+Then run all cells (Cell -> Run All). The notebook already contains its saved outputs, so GitHub shows the charts without running anything.
+
+To view the dashboards, open the `.twbx` in Tableau Public or Tableau Desktop.
