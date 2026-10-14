@@ -1,4 +1,4 @@
-# Airbnb Amsterdam — Exploratory Analysis & Tableau Dashboards
+# Airbnb Amsterdam - Exploratory Analysis & Tableau Dashboards
 
 Coursework project (Statistical Analysis & Visualisation, Visualization and Storytelling assignment) analysing Airbnb listings in Amsterdam with Python and Tableau.
 
